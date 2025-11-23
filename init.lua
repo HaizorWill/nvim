@@ -1,0 +1,5 @@
+require('base')
+require('keymaps')
+require('configs.autocmd')
+require('configs.diagnostics')
+require('configs.lazy')
