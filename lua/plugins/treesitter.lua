@@ -1,19 +1,22 @@
 return {
   {
     "nvim-treesitter/nvim-treesitter",
-    event = { "BufReadPost", "BufNewFile", },
-    cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo", },
+    event = { "BufReadPost", "BufNewFile" },
+    cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
     build = ":TSUpdate",
-    opts = {
-    },
+    opts = {},
     config = function()
       local ts = require("nvim-treesitter.configs")
 
       ts.setup({
-        highlight = { enable = true, },
-        textobjects = { enable = true, },
-        indent = { enable = true, },
-        autotag = { enable = true, },
+        highlight = {
+          enable = true,
+          additional_vim_regex_highlighting = false,
+        },
+        textobjects = { enable = true },
+        indent = { enable = true },
+        autotag = { enable = true },
+        auto_install = true,
         ensure_installed = {
           "vim",
           "vimdoc",
@@ -29,15 +32,18 @@ return {
         },
         incremental_selection = {
           enable = true,
-        },
-        rainbow = {
-          enable = true,
+          keymaps = {
+            init_selection = "gnn",
+            node_incremental = "grn",
+            scope_incremental = "grc",
+            node_decremental = "grm",
+          },
         },
         context_commentstring = {
           enable = true,
           enable_autocmd = false,
         },
       })
-    end
+    end,
   },
 }

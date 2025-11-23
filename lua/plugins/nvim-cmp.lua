@@ -1,15 +1,18 @@
 return {
   {
     "hrsh7th/nvim-cmp",
-    event = { "BufReadPre", "BufNewFile", },
+    event = { "BufReadPre", "BufNewFile" },
     dependencies = {
       "hrsh7th/cmp-cmdline",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
       "hrsh7th/vim-vsnip",
+      "Yu-Leo/cmp-go-pkgs",
+      "hrsh7th/cmp-nvim-lsp-signature-help",
+      "hrsh7th/cmp-nvim-lsp-document-symbol",
     },
     config = function()
-      local cmp = require('cmp')
+      local cmp = require("cmp")
       cmp.setup({
         completion = {
           completeopt = "menu,menuone,preview,noselect",
@@ -17,20 +20,25 @@ return {
         sources = cmp.config.sources({
           { name = "nvim_lsp" },
           { name = "vsnip" },
+          { name = "cmp-cmdline" },
+          { name = "cmp-path" },
+          { name = "cmp-go-pkgs" },
+          { name = "cmp-nvim-lsp-signature-help" },
+          { name = "cmp-nvim-lsp-document-symbol" },
         }, {
           { name = "buffer" },
         }),
         mapping = cmp.mapping.preset.insert({
-          ['<Tab>'] = cmp.mapping.confirm(),
+          ["<Tab>"] = cmp.mapping.confirm(),
         }),
       })
     end,
   },
   {
     "hrsh7th/cmp-nvim-lsp",
-    event = { "BufReadPre", "BufNewFile", },
+    event = { "BufReadPre", "BufNewFile" },
     config = function()
-      local cmp_nvim_lsp = require('cmp_nvim_lsp')
+      local cmp_nvim_lsp = require("cmp_nvim_lsp")
       local capabilities = cmp_nvim_lsp.default_capabilities()
 
       vim.lsp.config("*", {

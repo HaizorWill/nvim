@@ -30,3 +30,5 @@ opt.tabstop = 2
 opt.softtabstop = 2
 
 opt.updatetime = 300
+
+opt.clipboard = "unnamedplus"
