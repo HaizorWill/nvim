@@ -1,0 +1,22 @@
+return {
+  {
+    "nvim-tree/nvim-tree.lua",
+    -- event = { "BufReadPost", "BufNewFile" },
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
+    opts = {
+    },
+    config = function()
+      require("nvim-tree").setup(opts)
+
+      vim.api.nvim_create_autocmd("BufReadPost", {
+        callback = function(data)
+          local api = require("nvim-tree.api")
+
+          api.tree.open()
+        end,
+      })
+    end,
+  },
+}

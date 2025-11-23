@@ -1,0 +1,38 @@
+local function check_triggeredChars(triggerChars)
+  local cur_line = api.nvim_get_current_line()
+  local pos = api.nvim_win_get_cursor(0)[2]
+  local prev_char = cur_line:sub(pos - 1, pos - 1)
+  local cur_char = cur_line:sub(pos, pos)
+
+  for _, char in ipairs(triggerChars) do
+    if cur_char == char or prev_char == char then
+      return true
+    end
+  end
+end
+
+vim.api.nvim_create_autocmd("CursorHold", {
+  callback = function()
+    local clients = vim.lsp.get_clients({ bufnr = vim.api.nvim_get_current_buf() })
+    if #clients > 0 then
+      vim.lsp.buf.signature_help({
+        focus = false,
+        silent = true,
+        max_height = 7,
+        border = "single",
+      })
+    end
+  end,
+})
+
+vim.api.nvim_create_autocmd("TextYankPost", {
+  callback = function()
+    (vim.hl or vim.highlight).on_yank()
+  end,
+})
+
+-- vim.api.nvim_create_autocmd("CursorHold", {
+--   callback = function()
+--     -- vim.diagnostic.open_float(nil, { focus = false })
+--   end,
+-- })

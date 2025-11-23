@@ -1,0 +1,16 @@
+return {
+  {
+    "romgrk/barbar.nvim",
+    opts = {
+      animation = true,
+      auto_hide = false,
+      tabpages = true,
+      clickable = true,
+      focus_on_close = 'left',
+      semantic_letters = true,
+      sidebar_filetypes = {
+        NvimTree = true,
+      },
+    },
+  },
+}
