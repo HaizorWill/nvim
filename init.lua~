@@ -1,0 +1,3 @@
+require('base')
+require('themes')
+require('configs.lazy')
