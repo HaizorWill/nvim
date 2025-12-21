@@ -16,3 +16,9 @@ map("i", "<S-Tab>", "<Cmd><<CR>", opts)
 
 -- Lsp mappings
 --map("n", "<space>/", "<Cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+
+-- Resizing window
+map("n", "<C-Up>", "<Cmd>resize +2<CR>", { desc = "Increase height" })
+map("n", "<C-Down>", "<Cmd>resize -2<CR>", { desc = "Increase height" })
+map("n", "<C-Left>", "<Cmd>vertical resize -2<CR>", { desc = "Decrease width" })
+map("n", "<C-Right>", "<Cmd>vertical resize +2<CR>", { desc = "Increase width" })
