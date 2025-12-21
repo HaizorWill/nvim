@@ -1,0 +1,1 @@
+    clangdFileStatus = true,
