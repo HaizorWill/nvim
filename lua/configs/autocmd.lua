@@ -12,7 +12,7 @@
 -- end
 
 vim.api.nvim_create_autocmd("BufReadPost", {
-  group = vim.api.nvim_create_augroup("Restore", { clear = truem }),
+  group = vim.api.nvim_create_augroup("Restore", { clear = true }),
   pattern = { "*" },
   callback = function()
     local mark = vim.api.nvim_buf_get_mark(0, '"')
@@ -44,6 +44,12 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end,
 })
 
+vim.api.nvim_create_autocmd("BufRead", {
+  pattern = { "*.tf", "*.tfvars" },
+  callback = function()
+    vim.opt.filetype = "terraform"
+  end,
+})
 -- vim.api.nvim_create_autocmd("CursorHold", {
 --   callback = function()
 --     -- vim.diagnostic.open_float(nil, { focus = false })
