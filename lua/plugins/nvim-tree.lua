@@ -5,9 +5,10 @@ return {
     dependencies = {
       "nvim-tree/nvim-web-devicons",
     },
-    opts = {
-    },
     config = function()
+      local opts = {
+        view = { number = true, relativenumber = true },
+      }
       require("nvim-tree").setup(opts)
 
       vim.api.nvim_create_autocmd("BufReadPost", {
