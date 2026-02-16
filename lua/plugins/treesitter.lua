@@ -29,6 +29,7 @@ return {
           "gowork",
           "c",
           "cpp",
+          "hcl",
         },
         incremental_selection = {
           enable = true,
@@ -43,6 +44,20 @@ return {
           enable = true,
           enable_autocmd = false,
         },
+      })
+    end,
+  },
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    config = function()
+      local ts = require("treesitter-context")
+      ts.setup({
+        enable = true,
+        line_numbers = true,
+        multiline_threshold = 10,
+        mode = "topline",
+        max_lines = 4,
+        separator = "─",
       })
     end,
   },
