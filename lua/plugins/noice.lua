@@ -6,6 +6,9 @@ return {
       "MunifTanjim/nui.nvim",
     },
     opts = {
+      cmdline = {
+        enabled = true,
+      },
       lsp = {
         signature = {
           enabled = false,
@@ -13,6 +16,10 @@ return {
             enabled = false,
           },
         },
+      },
+      notify = {
+        enabled = true,
+        view = "virtualtext",
       },
       views = {
         cmdline_popup = {
