@@ -37,3 +37,5 @@ opt.softtabstop = 2
 opt.updatetime = 300
 
 opt.clipboard = "unnamedplus"
+vim.opt.langmap =
+  "ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz"

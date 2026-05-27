@@ -7,6 +7,7 @@ return {
         "clangd",
         "lua_ls",
         "ansiblels",
+        "postgres_lsp",
       },
     },
     dependencies = {
