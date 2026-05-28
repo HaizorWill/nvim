@@ -1,0 +1,9 @@
+CompileFlags:
+  Add: [-std=c23, -D_GNU_SOURCE, -xc, -Wall, -Wextra]
+  Compiler: "clang"
+Diagnostics:
+  ClangTidy:
+    Add: [performance-*, bugprone-*]
+  UnusedIncludes: Strict
+Index:
+  Background: Build
