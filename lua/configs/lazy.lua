@@ -25,7 +25,8 @@ require("lazy").setup({
     version = false,
   },
   checker = { enabled = true, notify = false },
-  install = { colorscheme = { "no-clown-fiesta-dark" } },
+  install = { colorscheme = { "vague" } },
 })
 
+-- Lazy colorscheme install doesn't seem to work every time and i am lazy so fuck it
 vim.cmd("colorscheme vague")
