@@ -50,6 +50,19 @@ vim.api.nvim_create_autocmd("BufRead", {
     vim.opt.filetype = "terraform"
   end,
 })
+
+vim.api.nvim_create_autocmd("BufRead", {
+  pattern = {
+    "*/playbooks/*.yml", 
+    "*/playbooks/*.yaml", 
+    "*/roles/*/tasks/*.yml", 
+    "*/roles/*/tasks/*.yaml", 
+    "local.yml" 
+   },
+  callback = function()
+    vim.opt.filetype =  "yaml.ansible"
+  end,
+})
 -- vim.api.nvim_create_autocmd("CursorHold", {
 --   callback = function()
 --     -- vim.diagnostic.open_float(nil, { focus = false })
