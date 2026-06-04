@@ -21,6 +21,7 @@ return {
   {
     "vague-theme/vague.nvim",
     lazy = false,
+    version = "2.1.0",
     priority = 1000,
     config = function()
       require("vague").setup({
