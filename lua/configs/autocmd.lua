@@ -53,13 +53,11 @@ vim.api.nvim_create_autocmd("BufRead", {
 
 vim.api.nvim_create_autocmd("BufRead", {
   pattern = {
-    "*/tasks/*.yaml",
-    "*/handlers/*.yaml",
-    "*/defaults/*.yaml",
-    "*/playbooks/*.yml",
-    "*/playbooks/*.yaml",
-    "*/roles/*/tasks/*.yml",
-    "*/roles/*/tasks/*.yaml",
+    "*/tasks/*.ya?ml",
+    "*/handlers/*.ya?ml",
+    "*/defaults/*.ya?ml",
+    "*/playbooks/*.ya?ml",
+    "*/roles/*/tasks/*.ya?ml",
     "local.yml",
   },
   callback = function()
