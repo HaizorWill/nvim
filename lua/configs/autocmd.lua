@@ -63,6 +63,8 @@ vim.api.nvim_create_autocmd("BufRead", {
     "*/playbooks/*.yaml",
     "*/roles/*/tasks/*.yml",
     "*/roles/*/tasks/*.yaml",
+    "*/vars/*.yml",
+    "*/vars/*.yaml",
     "local.yml",
   },
   callback = function()
