@@ -22,7 +22,11 @@ return {
         enabled = false,
       },
       validation = {
-        enabled = false,
+        enabled = true,
+        lint = {
+          enabled = true,
+          path = "ansible-lint",
+        },
       },
     },
   },
