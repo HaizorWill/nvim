@@ -32,6 +32,12 @@ return {
       presets = {
         bottom_search = true,
       },
+      routes = {
+        {
+          filter = { event = "lsp", kind = "progress", find = "basedpyright" },
+          opts = { skip = true },
+        },
+      },
     },
   },
 }
