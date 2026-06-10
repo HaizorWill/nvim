@@ -6,7 +6,7 @@ vim.scriptencoding = "utf-8"
 opt.termguicolors = true
 opt.encoding = "utf-8"
 opt.fileencoding = "utf-8"
-opt.filetype = "unix"
+opt.fileformat = "unix"
 
 opt.number = true
 opt.numberwidth = 2
